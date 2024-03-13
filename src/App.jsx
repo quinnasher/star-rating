@@ -1,11 +1,11 @@
-import StarContext from "./star-rating/star-context/StarContext.jsx";
+import ImdStarCard from "./star-rating/GetStarRatingCard/ImdStarCard.jsx";
 
 
 function App() {
 
   return (
     <>
-      <StarContext />
+      <ImdStarCard starType={4} shadowColor={"green"} />
     </>
   );
 }

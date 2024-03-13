@@ -1,16 +1,11 @@
 import Star3Full from "./Star3Full.jsx";
 import Star3Empty from "./Star3Empty.jsx";
 
-export default function Star3({
-                                full,
-                                size = 50,
-                                strokeColor = "#ffa600",
-                                fillColor = "#ffc400"
-                              }) {
+export default function Star3({ full }) {
   return (
     <>
-      {full ? <Star3Full size={size} strokeColor={strokeColor} fillColor={fillColor} /> :
-        <Star3Empty size={size} strokeColor={strokeColor} />}
+      {full ? <Star3Full /> :
+        <Star3Empty />}
     </>
   );
 }

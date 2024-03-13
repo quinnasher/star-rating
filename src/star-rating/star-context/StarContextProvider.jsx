@@ -1,19 +1,35 @@
 import { createContext } from "react";
 import useStarContext from "./useStarContext.js";
 
-const StarContext = createContext(null);
+export const StarContext = createContext(null);
 
 export default function StarContextProvider({
                                               children,
+                                              onGetRating,
+                                              isSingleStarStatic,
                                               maxRating,
                                               defaultRating,
-                                              size = 3,
-                                              fontSize = 2,
-                                              color = "#ffd700",
-                                              onGetRating
+                                              starType,
+                                              size,
+                                              strokeColor,
+                                              fillColor,
+                                              shadowColor
                                             }) {
+
+  const starContextValue = useStarContext({
+    maxRating,
+    defaultRating,
+    onGetRating,
+    size,
+    strokeColor,
+    fillColor,
+    shadowColor,
+    starType,
+    isSingleStarStatic
+  });
+
   return (
-    <StarContext.Provider value={useStarContext(maxRating, defaultRating)}>
+    <StarContext.Provider value={starContextValue}>
       {children}
     </StarContext.Provider>
   );

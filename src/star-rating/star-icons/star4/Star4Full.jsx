@@ -1,16 +1,20 @@
-export default function Star4Full({ fillColor }) {
+import { StarContext } from "../../star-context/StarContextProvider.jsx";
+import { useContext } from "react";
+
+export default function Star4Full({ isStatic = true, newSize }) {
+  const { fillColor, calculateSize } = useContext(StarContext);
   return (
     <svg xmlns="http://www.w3.org/2000/svg"
-         xmlns:xlink="http://www.w3.org/1999/xlink"
-         width="40"
+         xmlnsXlink="http://www.w3.org/1999/xlink"
+         width={calculateSize(isStatic, newSize)}
          zoomAndPan="magnify"
          viewBox="0 0 30 30.000001"
-         height="40"
+         height={calculateSize(isStatic, newSize)}
          preserveAspectRatio="xMidYMid meet"
          version="1.0">
       <defs>
         <clipPath id="c8f275d508">
-          <path d="M 2 1.21875 L 27.941406 1.21875 L 27.941406 27 L 2 27 Z M 2 1.21875 " clip-rule="nonzero" />
+          <path d="M 2 1.21875 L 27.941406 1.21875 L 27.941406 27 L 2 27 Z M 2 1.21875 " clipRule="nonzero" />
         </clipPath>
       </defs>
       <g clipPath="url(#c8f275d508)">

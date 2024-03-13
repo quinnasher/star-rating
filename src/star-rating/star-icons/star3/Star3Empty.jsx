@@ -1,11 +1,18 @@
-export default function Star3Empty({ size, strokeColor }) {
+import { useContext } from "react";
+import { StarContext } from "../../star-context/StarContextProvider.jsx";
+
+export default function Star3Empty({ isStatic = true, newSize }) {
+  const {
+    calculateSize,
+    strokeColor
+  } = useContext(StarContext);
   return (
     <svg xmlns="http://www.w3.org/2000/svg"
-         xmlns:xlink="http://www.w3.org/1999/xlink"
-         width={size + "px"}
+         xmlnsXlink="http://www.w3.org/1999/xlink"
+         width={calculateSize(isStatic, newSize)}
          zoomAndPan="magnify"
          viewBox="0 0 30 30.000001"
-         height={size + "px"}
+         height={calculateSize(isStatic, newSize)}
          preserveAspectRatio="xMidYMid meet"
          version="1.0">
       <defs>
